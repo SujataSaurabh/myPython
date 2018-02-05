@@ -31,4 +31,5 @@ print("the new updated list", letters)
 
 letters[2] = []
 print("The new list after removing index 2 element is --", letters)
+print("strange observation -- removing an item from the list does not change its size :( ")
 print(len(letters))
