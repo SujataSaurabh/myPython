@@ -23,3 +23,27 @@ def sortChar(s):
 
 values.sort(key = sortChar) # sort list with the sorted characters at the 3rd place
 print("list sorted with 3rd key in the strings ...", values)
+
+# remove or delete items from the list
+names = ["Tommy", "Bill", "Janet", "Bill", "Stacy"]
+print("\nthe list of names contain", names)
+
+# remove the "Bill"
+names.remove("Bill") # remove method will remove the first matching element of the list
+print("new list after applying remove method ...",names)
+print("observe that one \"Bill\" is omitted but another is still there in the list")
+
+del names[2] # del can be used to remove a range of elements OR an element at a specific index location
+print("\nremoving the element using \"del\" method", names)
+
+# FOR method applied on the list
+names = ["Tommy", "Bill", "Janet", "Bill", "Stacy"]
+
+print("\n USING i ON THE LIST TO PICK UP ITS ITEMS")
+for i in range(len(names)):
+    print(names[i])
+
+# OR
+print("\n USING element ON THE LIST TO PICK UP ITS ITEMS")
+for element in names:
+    print(element)
