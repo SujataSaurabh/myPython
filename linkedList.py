@@ -23,7 +23,7 @@ class node:
 class unorderedList:
     def __init__(self):
         self.head = None
-
+        size = 0
     def isEmpty(self):
         return self.head == None
 
@@ -31,6 +31,7 @@ class unorderedList:
         temp = node(item)
         temp.setNext(self.head)
         self.head = temp
+    #    size+=1
         return True
         ## linkedlist traversal functions --search, size and remove
     def size(self):
@@ -59,7 +60,30 @@ class unorderedList:
                 current  = current.getNext()
         return itemFound
 
-# now use the class functions 
+    def remove(self, item):
+        current = self.head
+        previous = None
+        itemFound = False
+        while not itemFound:
+            if current.getVal()==item:
+                itemFound = True
+            else:
+                previous = current
+                current = current.getNext()
+
+        previous.setNext(current.getNext())
+
+    def append(self, item):
+        temp = node(item)
+        temp.setNext(None)
+        current = self.head
+        if current:
+            while current.getNext()!=None:
+                current = current.getNext()
+            current.setNext(temp)
+        else:
+            self.head = Node(item)
+# now use the class functions
 myList  = unorderedList()
 print(myList.add(10))
 print(myList.add(11))
@@ -71,6 +95,12 @@ print("Number of items in Linked list are: \t" + str(size_ll))
 print("The items in the linked list are: ")
 myList.printList()
 print(myList.search(22))
+myList.remove(10)
+print("New linked list is: ")
+myList.printList()
+myList.append(23)
+print("appending 23")
+myList.printList()
 # define an object of class node with name 'temp' and value '93'
 # temp =  node(93)
 # print its value
