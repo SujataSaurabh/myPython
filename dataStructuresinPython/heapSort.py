@@ -1,6 +1,6 @@
 #	@SuGo, 7August 2018
 #	Implementation of heap sort
-
+#	Incorrect!
 def heapSort(A):
 	heapify(A)
 	print("\n first heapify call made A as:: ", A, "\n")
