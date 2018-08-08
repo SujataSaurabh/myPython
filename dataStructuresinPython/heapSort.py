@@ -1,6 +1,5 @@
 #	@SuGo, 7August 2018
 #	Implementation of heap sort
-#	Incorrect!
 def heapSort(A):
 	heapify(A)
 	print("\n first heapify call made A as:: ", A, "\n")
@@ -15,7 +14,7 @@ def heapSort(A):
 	print("Final and sorted array is:: ",A, "\n at i= ", i)
 # 
 def heapify(A):
-	for i in range(int(len(A)/2), -1, -1):
+	for i in range(int(len(A)/2)-1, -1, -1):
 		heapify_(A, i)
 #
 def heapify_(A, i, heapsize=None):
