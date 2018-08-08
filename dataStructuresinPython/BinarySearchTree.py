@@ -1,6 +1,6 @@
 #	@SuGo, 8 August 2018
 #	Implementation of Binary search tree
-
+#	reference: https://www.geeksforgeeks.org/binary-search-tree-set-1-search-and-insertion/
 class Node:
 	def __init__(self, key):
 		self.left = self.right = None
