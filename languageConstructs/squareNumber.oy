@@ -1,0 +1,8 @@
+#	SuGo, 14 August 2018
+#	Print square of a number
+
+def squareNo(number):
+	number = float(number)
+	return number^2
+
+print(squareNo(4))
