@@ -83,7 +83,32 @@ class linkedList:
 			else:
 				temp = temp.next
 		return False
-	
+	def nthNode(self, nPos):
+		count = 1
+		temp = self.head
+		while(temp):
+			if(count == nPos):
+				return temp.data
+			else: 
+				temp = temp.next	
+				count+=1
+		print("counter out of bound!")
+		return
+	def nthNodeFromLast(self, nthLast):
+		leng = 1
+		temp = self.head
+		while(temp):
+			temp = temp.next
+			leng+=1
+		itemPos = leng-nthLast+1 
+		counter = 1
+		while(temp):
+			if(counter == itemPos):
+				return temp.data
+			else:
+				temp = temp.next
+				counter+=1
+		 
 #	** test **
 #	Start with the empty list
 llist = linkedList()
@@ -102,8 +127,8 @@ print("inserting at end")
 llist.insert_atEnd(10)
 llist.delete_atNode(20)
 llist.traverse()
-llist.delete_linkList()
-llist.traverse()
+#llist.delete_linkList()
+#llist.traverse()
 print("length of link llist -- ")
 count = llist.length_linkList()
 print(count)
@@ -111,5 +136,5 @@ print("Searching item 10 in the list!")
 print(llist.search_linkList(10))
 print("Searching item 90 in the list!")
 print(llist.search_linkList(90))
-
-
+print("Third node is-- ", llist.nthNode(3))
+print("from Last the item is ", llist.nthNodeFromLast(1))
