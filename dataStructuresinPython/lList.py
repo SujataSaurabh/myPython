@@ -14,7 +14,6 @@ class linkedList:
 	def traverse(self):
 			temp = self.head
 			if(temp == None):
-				temp = None
 				print('No items found!')
 				return
 			else:
@@ -64,6 +63,7 @@ class linkedList:
 	
 	def delete_linkList(self):
 		temp =self.head
+		self.head = None
 		while(temp):
 			current = temp.next
 			del  temp.data
