@@ -95,17 +95,20 @@ class linkedList:
 		print("counter out of bound!")
 		return
 	def nthNodeFromLast(self, nthLast):
-		leng = 1
+		leng = 0
 		temp = self.head
 		while(temp):
 			temp = temp.next
 			leng+=1
-		itemPos = leng-nthLast+1 
+		itemPos = leng-nthLast+1
+		#print("itemPos -- ", itemPos) 
 		counter = 1
+		temp = self.head
 		while(temp):
 			if(counter == itemPos):
 				return temp.data
 			else:
+				#print("value skipped == ", temp.data)
 				temp = temp.next
 				counter+=1
 		 
@@ -137,4 +140,4 @@ print(llist.search_linkList(10))
 print("Searching item 90 in the list!")
 print(llist.search_linkList(90))
 print("Third node is-- ", llist.nthNode(3))
-print("from Last the item is ", llist.nthNodeFromLast(1))
+print("from Last the item is ", llist.nthNodeFromLast(3))
