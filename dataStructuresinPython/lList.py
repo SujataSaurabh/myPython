@@ -43,10 +43,14 @@ class linkedList:
 	#	
 	def insert_atEnd(self, data):
 		newNode = Node(data)
-		temp    = self.head
-		while(temp.next):
-			temp = temp.next		
-		temp.next = newNode	
+		if self.head == None:
+			self.head = newNode
+		else:
+			temp    = self.head
+			while(temp.next):
+				temp = temp.next		
+			temp.next = newNode
+	
 	def delete_atNode(self, val):
 		temp = self.head
 		while(temp):
@@ -126,11 +130,11 @@ class linkedList:
 		prevX = None
 		prevY = None
 		tempX = self.head 	# temp can also be referered as the current pointer
-		while(tempX and tempX.data == xNode):
+		while(tempX and tempX.data != xNode):
 			prevX = tempX
 			tempX = tempX.next
 		tempY = self.head
-		while(tempY and tempY.data == yNode):
+		while(tempY and tempY.data != yNode):
 			prevY = tempY
 			tempY = tempY.next
 		if (tempX == None or tempY ==None):
@@ -166,38 +170,21 @@ class linkedList:
 			# 	prepare the linked list with even numbers
 			
 			if(temp.data %2 == 0):
-				print("even ", temp.data)
-				if(llEven.head is None):
-					print("First even is Nil")
-					llEven.head = temp
-					#llEven.head.next   = None
-				else:
-					print("inserted in Even ", temp)
-					llEven.insert_atFirst(temp)
-						
+				llEven.insert_atEnd(temp.data)
+				llEven.traverse()				
 			#	prepare the linked list with odd numbers
 		
 			else:
-				print("odd ", temp.data)
-				if(llOdd.head is None):
-					print("First odd is Nil ")
-					llOdd.head  = temp
-					#llOdd.head.next  = None
-				else:	
-					print("inserted in Odd ", temp)
-					llOdd.insert_atFirst(temp)
+				llOdd.insert_atEnd(temp.data)
+				llOdd.traverse()
 			temp = temp.next	
 		# 	traverse even linked list as the odd list has to be appended to it
-			print("traversing both Even and Odd...")
 			
-			llEven.traverse()
-			llOdd.traverse()
-			evenTmp  = llEven.head
-			print("evenTmp", evenTmp)
-			while(evenTmp):
-				evenTmp = evenTmp.next
-			evenTmp.next = llOdd.head
-			return evenTmp
+		evenTmp  = llEven.head
+		while(evenTmp.next):
+			evenTmp = evenTmp.next
+		evenTmp.next = llOdd.head
+		return llEven
 
 #	def detectLoop(self):
 #		temp = self.head
@@ -228,12 +215,12 @@ four.next  = five
 #five.next  = sec
 #llist.traverse()
 #print("inserting after specific node")
-llist.insert_atPos(2, 6)
+#llist.insert_atPos(2, 6)
 #print("inserting at first")
-llist.insert_atFirst(10)
-llist.insert_atFirst(100)
+#llist.insert_atFirst(10)
+#llist.insert_atFirst(100)
 #print("inserting at end")
-#llist.insert_atEnd(10)
+llist.insert_atEnd(10)
 #llist.delete_atNode(20)
 llist.traverse()
 #llist.delete_linkList()
@@ -249,10 +236,10 @@ print(count)
 #print("from Last the item is ", llist.nthNodeFromLast(3))
 #print("10 is repeated ", llist.countRepeat(100), "times")
 #print("Loop info == ", llist.detectLoop())
-print("Swapping Nodes 2 and 3")
-#llist.swapNodes(2, 6)
-#print("List after swapping ... ")
-llist.moveLast2Front()
+#print("Swapping Nodes 2 and 3")
+llist.swapNodes(2, 5)
+print("List after swapping ... ")
+#llist.moveLast2Front()
 llist.traverse()
-llist.segregateEvenOdd()
-llist.traverse()
+print("segregate results")
+llist.segregateEvenOdd().traverse()
