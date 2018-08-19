@@ -1,5 +1,5 @@
 #	SuGo, 17 August 2018
-#	Implements a linked list
+#	Implements a Singly linked list and operations on it
 
 class Node:
 	def __init__(self, data):
@@ -185,6 +185,17 @@ class linkedList:
 			evenTmp = evenTmp.next
 		evenTmp.next = llOdd.head
 		return llEven
+	
+	def reverseLL(self):
+		prev = None
+		Next = None
+		current = self.head
+		while(current):
+			Next	     = current.next
+			current.next = prev
+			prev 	= current
+			current	= Next
+		self.head = prev
 
 #	def detectLoop(self):
 #		temp = self.head
@@ -243,3 +254,6 @@ print("List after swapping ... ")
 llist.traverse()
 print("segregate results")
 llist.segregateEvenOdd().traverse()
+print("Reverse LL")
+llist.reverseLL()
+llist.traverse()
