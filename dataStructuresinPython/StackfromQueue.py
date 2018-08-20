@@ -16,6 +16,9 @@ class Queue:
 		else:
 			print("No items found")
 			return
+		
+	def isEmpty():
+		return (len(self.items) == 0)
 
 class StackvonQ:
 	def __init__(self):
