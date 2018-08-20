@@ -10,7 +10,7 @@ class Queue:
 		self.items.insert(0, data)
 	
 	def outQ(self):
-		if(self.items != []):
+		if(self.isEmpty()):
 			print("Entering Que pop")
 			return self.items.pop()
 		else:
