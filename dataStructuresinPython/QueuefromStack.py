@@ -15,7 +15,7 @@ class QueuevonStacks:
 	def outQueue(self):
 		if(self.stack2.isEmpty()):
 			while(not self.stack1.isEmpty()):
-				item  = self.stack1.Pop()
+				item  = self.stack1.Pop(self)
 				self.stack2.push(item)
 #		while(self.stack2.items != []):
 		return self.stack2.Pop()
