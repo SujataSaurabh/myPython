@@ -17,7 +17,7 @@ class Queue:
 			print("No items found")
 			return
 		
-	def isEmpty():
+	def isEmpty(self):
 		return (len(self.items) == 0)
 
 class StackvonQ:
