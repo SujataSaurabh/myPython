@@ -1,9 +1,11 @@
 #	SuGo, 20 August 2018
 #	This program implements two stacks using one array
 # Methodology:
-#	Use one array. Start two stacks type implementation from two extreme corners 	    of the array. That is, star one stack from the left corner and second stack from the right most corner. Fill the left stack towards right and right stack moving towards left. 
+#	Use one array. Start two stacks type implementation from two extreme corners of the array. 
+#	That is, star one stack from the left corner and second stack from the right most corner. 
+#	Fill the left stack towards right and right stack moving towards left. 
 
-# webref:https://www.geeksforgeeks.org/implement-two-stacks-in-an-array/
+# 	webref:https://www.geeksforgeeks.org/implement-two-stacks-in-an-array/
 
 class twoStacks:
 	def __init__(self, sizeofArray):
