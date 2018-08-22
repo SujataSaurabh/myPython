@@ -13,8 +13,8 @@ class QueuevonStacks:
 		self.stack1.push(data)
 	
 	def outQueue(self):
-		if(self.stack2.items == []):
-			while(self.stack1.items):
+		if(self.stack2.isEmpty()):
+			while(not self.stack1.isEmpty()):
 				item  = self.stack1.Pop()
 				self.stack2.push(item)
 #		while(self.stack2.items != []):
@@ -30,8 +30,12 @@ class Stack:
 	def push(self, data):
 		self.items.append(data)
 
-	def Pop():
+	def Pop(self):
 		return self.items.pop()
+	
+	def isEmpty(self):
+		return (len(self.items) == 0)
+		
 
 #	****
 
