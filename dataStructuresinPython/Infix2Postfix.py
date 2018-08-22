@@ -69,11 +69,11 @@ class Conversion:
 				    self.push(i)
 		while not self.isEmpty():
 		    self.postfix.append(self.pop())
-		return self.postfix
+		print("".join(self.postfix))
 		
 #
-ex = "a+b*d" 
+ex = "a+b*d^e+r" 
 con = Conversion(len(ex)) 
-print(con.infix2postfix(ex))
+con.infix2postfix(ex)
 
 		
