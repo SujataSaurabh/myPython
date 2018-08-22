@@ -52,6 +52,21 @@ class Conversion:
 		precOp1 = self.precedence[operator]
 		precOp2 = self.precedence[self.topofStack()]
 		
-		return True if precOp1 <= precop2 else False
+		return True if precOp1 <= precOp2 else False
+	
+	def infix2postfix (self, InExpr):
+		lenInExpr = len (InExpr) 
+		for i in InExpr:
+			if Conversion.isOperand (self, i):
+				self.postfix.append (i)
+			else:
+				#it is operator. now check precedences
+				if Conversion.isEmpty (self):
+					self.push (i)
+				else:
+					if Conversion.comparePrecedence (self, i):
+						self.push (i)
+					else:
+						self.postfix.append (self.pop (topofStack (self)))
 
 		
