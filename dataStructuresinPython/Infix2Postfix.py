@@ -64,9 +64,16 @@ class Conversion:
 				if Conversion.isEmpty (self):
 					self.push (i)
 				else:
-					if Conversion.comparePrecedence (self, i):
-						self.push (i)
-					else:
-						self.postfix.append (self.pop (topofStack (self)))
+				    while (not self.isEmpty() and Conversion.comparePrecedence (self, i)):
+				        self.postfix.append(self.pop())
+				    self.push(i)
+		while not self.isEmpty():
+		    self.postfix.append(self.pop())
+		return self.postfix
+		
+#
+ex = "a+b*d" 
+con = Conversion(len(ex)) 
+print(con.infix2postfix(ex))
 
 		
