@@ -1,10 +1,13 @@
 # @SuGo, 31 July 2018
-# Insertion sorting algorithm
+# Bubble sorting algorithm
 # In this sorting, every single value is compared with the rest of the values one by one. Hence, the complexity depends on the size of the input to be sorted. 
 # Complexity::  Best case -- O(n) and Worst case -- O(n^2)
 #
 # -----------------
 def insertionSort(A):
+	'''
+	This code follows the bubble sort algorithm. Do not consider the algo as of the insertion sorting
+	'''
 	xrange = range
 	for i in xrange(1, len(A)):
 		for j in xrange(i, 0, -1):
