@@ -1,0 +1,26 @@
+class TreeNode:
+     def __init__(self, x):
+        self.val   = x
+        self.left  = None
+        self.right = None
+
+class Solution:
+     def zigzagLevelOrder(self, root):
+        """
+        :type root: TreeNode
+        :rtype: List[List[int]]
+        https://leetcode.com/explore/interview/card/top-interview-questions-medium/108/trees-and-graphs/787/discuss/33832/8-liner-Python
+        """
+        if not root:
+            return []
+        res, level, direction = [], [root], 1
+        while level:
+            res.append([n.val for n in level][::direction])
+            direction *= -1
+            level = [kid for node in level for kid in (node.left, node.right) if kid]
+        return res
+      
+      def zigzagLevelOrder2():
+        '''
+        https://leetcode.com/explore/interview/card/top-interview-questions-medium/108/trees-and-graphs/787/discuss/182589/Python-solution-using-deque
+        '''
